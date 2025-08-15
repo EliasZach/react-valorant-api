@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-valorantLogo: #FF4655;
+}
+
+@layer utilities {
+  .background-image {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+  .background-image::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    filter: blur(100px);
+    z-index: -1;
+  }
+  .background-light::before {
+    background-image: url('../src/assets/img/Valorant_Launch_KV_424_designpass_F.jpg');
+
+  }
+  .background-dark::before {
+    background-image: url('../src/assets/img/China_PreRegistration_KV.jpg');
+  }
+}
